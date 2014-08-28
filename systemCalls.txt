@@ -43,7 +43,23 @@ NOPP
 NOPP
 XXXX
 ^
-^WAIT 132
+^ Create Thread 132
+NOPP
+NOPP
+NOPP
+CREA
+NOPP
+NOPP
+NOPP
+XXXX
+^ Join Thread 164
+NOPP
+JOIN
+XXXX
+^
+^WAIT 176
+ADDR B,S^Obtiene la posicion del semaforo
+MOVR B,A^Guardar la posicion
 GETM D,B^ Levanta el valor del semaforo en D
 LOAD A,0
 CLEQ D,A^ Si el semaforo es menor o igual a 0
@@ -55,7 +71,9 @@ XXXX^ Salir
 BLOK^ Bloquearlo por el semaforo
 XXXX
 ^
-^SIGNAL 188
+^SIGNAL 244
+ADDR B,S^Obtiene la posicion del semaforo
+MOVR B,A^Guardar la posicion
 GETM D,B^ Levanta el valor del semaforo en D
 LOAD A,0
 CLEQ D,A^ Si el valor es 0 o menor, es porque habia alguno bloqueado
@@ -66,18 +84,8 @@ XXXX
 :Levantar
 WAKE^ Levantelo
 XXXX
-^
-^ Create Thread 244
-NOPP
-NOPP
-NOPP
-CREA
-NOPP
-NOPP
-NOPP
+^SETSEM 312
+ADDR B,S
+SETM 1,A,D
 XXXX
-^ Join Thread 288
-NOPP
-JOIN
-XXXX
-^294
+^332

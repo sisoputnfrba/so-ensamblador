@@ -1,0 +1,8 @@
+LOAD A,#Medio
+:Principio
+LOAD B,#Principio
+XXXX
+DATA
+"123456
+:Medio
+"7890

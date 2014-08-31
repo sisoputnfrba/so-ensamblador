@@ -1,0 +1,10 @@
+LOAD A,500
+PUSH 1,A^ pone 244, porque es solo 1 byte
+LOAD A,600
+PUSH 4,A^ pone 600
+NOPP^ nada
+TAKE 4,A^ saca el 600
+MOVR B,A
+LOAD A,0
+TAKE 1,A^Saca el 244
+XXXX

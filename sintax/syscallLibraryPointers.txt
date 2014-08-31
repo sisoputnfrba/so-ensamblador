@@ -1,0 +1,14 @@
+call_translate(MALLOC, 0)
+call_translate(FREE, 28)
+
+call_translate(INN, 48)
+call_translate(INC, 64)
+call_translate(OUTN, 76)
+call_translate(OUTC, 108)
+
+call_translate(CREATE_THREAD, 132)
+call_translate(JOIN_THREAD, 164)
+
+call_translate(WAIT, 176)
+call_translate(SIGNAL, 244)
+call_translate(SETSEM, 312)

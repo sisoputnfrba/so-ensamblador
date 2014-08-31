@@ -1,0 +1,15 @@
+LOAD A,5
+MOVR B,A
+COMP A,B^ ==
+MOVR C,A^ &&
+LOAD A,700
+LOAD B,-3
+CGEQ A,B^ >=
+MULR C,A
+MOVR C,A
+LOAD A,0
+LOAD B,3
+CLEQ A,B^ <=
+MULR C,A
+^(5==5) && (700>=-3) && (0<=3))
+XXXX

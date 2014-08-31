@@ -1,0 +1,11 @@
+LOAD A,#texto
+ADDR A,M^ Donde esta el texto
+LOAD B,11
+INTE OUTC^ imprimi 11 caracteres
+ADDR A,B
+INTE OUTN
+XXXX
+DATA
+:texto
+"Hola mundo!
+7

@@ -1,0 +1,21 @@
+LOAD A,#Hijo^Donde esta el hijo
+ADDR A,M^ Con respecto a mi codigo
+MOVR B,A^ Guarda esa posicion en B
+INTE CREATE_THREAD^Crea el hilo que salta al hijo
+INTE JOIN_THREAD^ Espera a que termine. El TID lo guarda en A y lo toma de A
+LOAD A,#Global^ Donde esta la global
+ADDR A,M^ con respecto a este codigo
+LOAD B,1^1 solo caracter
+INTE OUTC^ Imprimir el 1 caracter de Global
+XXXX
+^
+^Hilo
+:Hijo
+LOAD A,#Global
+ADDR M,A
+LOAD B,65^A mayuscula
+SETM 1,A,B
+XXXX
+DATA
+:Global
+"a

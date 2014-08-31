@@ -1,0 +1,5 @@
+LOAD A,4
+INTE MALLOC
+LOAD B,300
+SETM 4,A,B^ 300 en la posicion alocada
+XXXX

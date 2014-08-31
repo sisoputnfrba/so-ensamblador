@@ -1,0 +1,14 @@
+LOAD A,#Hola
+ADDR A,M
+MOVR B,A^Donde esta el texto
+LOAD A,5^Loop counter
+:Loop
+GETM C,B^levanta 1 bit
+PUSH 1,C^y pushealo
+INCR B
+DECR A
+JPNZ #Loop^5 veces
+XXXX
+DATA
+:Hola
+"Hola?

@@ -1,0 +1,5 @@
+LOAD B,7
+LOAD A,5
+ADDR M,A
+GETM A,A^ Agarra el 5to byte, que es el 7
+XXXX

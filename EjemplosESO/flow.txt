@@ -1,0 +1,5 @@
+LOAD A,23
+GOTO A^ Saltar el b=5
+LOAD B,5
+LOAD C,9
+XXXX

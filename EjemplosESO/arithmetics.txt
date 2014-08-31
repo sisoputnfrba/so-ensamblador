@@ -1,0 +1,15 @@
+LOAD A,7
+LOAD B,90
+MULR A,B^ 7 * 90
+LOAD B,5
+ADDR A,B^ 7 * 90 + 5
+DECR A^ 7 * 90 + 5 - 1
+LOAD B,2
+DIVR A,B^ 7 * 90 + 5 - 1 / 2
+LOAD B,40
+MODR A,B^ 7 * 90 + 5 - 1 / 2 % 40
+LOAD B,300
+SUBR A,B^ 7 * 90 + 5 - 1 / 2 % 40 - 300
+INCR A^ 7 * 90 + 5 - 1 / 2 % 40 - 300 + 1
+^-262
+XXXX

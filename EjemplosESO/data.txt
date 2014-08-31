@@ -1,0 +1,7 @@
+LOAD A,38^ 38 apunta al texto abajo
+ADDR M,A
+LOAD B,9
+SETM 4,A,B^ Pone el int 9
+XXXX
+DATA
+"Hola Mundo!

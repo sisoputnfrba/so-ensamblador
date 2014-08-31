@@ -1,0 +1,13 @@
+LOAD A,#espacio
+ADDR A,M
+LOAD B,5
+INTE INC^ Ingresa 5 chars
+INTE OUTC^ imprimilos
+INCR A^ move el puntero asi mira al otro DATA
+INTE INN^ingresa un numero
+INTE OUTN^ mostralo como numero
+XXXX
+DATA
+:espacio
+"Hola
+5

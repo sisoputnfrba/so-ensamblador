@@ -1,0 +1,5 @@
+LOAD A,4
+INTE MALLOC
+INTE FREE
+SETM 4,A,B^ Inteta escribir en un lugar donde liberaste
+XXXX

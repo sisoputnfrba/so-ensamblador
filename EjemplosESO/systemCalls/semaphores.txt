@@ -1,0 +1,6 @@
+LOAD B,5^El semaforo 5
+LOAD D,1^Ponerlo en 1
+INTE SETSEM
+INTE WAIT
+INTE SIGNAL
+XXXX

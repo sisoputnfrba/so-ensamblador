@@ -1,0 +1,76 @@
+//Carga en el registro, el número dado.
+createRule(LOAD, Registro, Numero)
+//Obtiene el valor de memoria apuntado por el segundo registro. El valor obtenido lo asigna en el primer registro.
+createRule(GETM, Registro, Registro)
+//Pone tantos bytes desde el segundo registro, hacia la memoria apuntada por el primer registro
+createRule(SETM, Numero, Registro, Registro)
+//Copia el valor del segundo registro hacia el primero
+createRule(MOVR, Registro, Registro)
+
+//Suma el primer registro con el segundo registro. El resultado de la operación se almacena en el registro A.
+createRule(ADDR, Registro, Registro)
+//Resta el primer registro con el segundo registro. El resultado de la operación se almacena en el registro A.
+createRule(SUBR, Registro, Registro)
+//Multiplica el primer registro con el segundo registro. El resultado de la operación se almacena en el registro A.
+createRule(MULR, Registro, Registro)
+//Obtiene el resto de la división del primer registro con el segundo registro. El resultado de la operación se almacena en el registro A.
+createRule(MODR, Registro, Registro)
+//Divide el primer registro con el segundo registro. El resultado de la operación se almacena en el registro A; a menos que el segundo operando sea 0, en cuyo caso se asigna el flag de ZERO_DIV y no se hace la operacion.
+createRule(DIVR, Registro, Registro)
+
+//Incrementar una unidad al registro
+createRule(INCR, Registro)
+//Decrementa una unidad al registro.
+createRule(DECR, Registro)
+
+//Compara si el primer registro es igual al segundo. De ser verdadero, se almacena el valor 1. De lo contrario el valor 0. El resultado de la operación se almacena en el registro A.
+createRule(COMP, Registro, Registro)
+//Compara si el primer registro es mayor o igual al segundo. De ser verdadero, se almacena el valor 1. De lo contrario el valor 0. El resultado de la operación se almacena en el registro A.
+createRule(CGEQ, Registro, Registro)
+//Compara si el primer registro es menor o igual al segundo. De ser verdadero, se almacena el valor 1. De lo contrario el valor 0. El resultado de la operación se almacena en el registro A.
+createRule(CLEQ, Registro, Registro)
+
+//Altera el flujo de ejecución para ejecutar la instrucción apuntada por el registro. El valor es el desplazamiento desde el inicio del programa.
+createRule(GOTO, Registro)
+//Altera el flujo de ejecución, solo si el valor del registro A es cero, para ejecutar la instrucción apuntada por el registro. El valor es el desplazamiento desde el inicio del programa.
+createRule(JMPZ, Numero)
+//Altera el flujo de ejecución, solo si el valor del registro A es cero, para ejecutar la instrucción apuntada por el registro. El valor es el desplazamiento desde el inicio del programa.
+createRule(JPNZ, Numero)
+
+//Interrumpe la ejecución del programa para ejecutar la rutina del kernel que se encuentra en la posicion apuntada por la direccion. El ensamblador admite ingresar una cadena indicando el nombre, que luego transformará en el número correspondiente. Los posibles valores son “MALC”, “FREE”, “INNN”, “INNC”, “OUTN”, “OUTC”, “BLOK”, “WAKE”, “CREA” y“ JOIN”.
+createRule(INTE, Numero)
+//Limpia el registro de flags.
+createRule(FLCL)
+
+//Desplaza los bits del registro, tantas veces como se indique en el Número. De ser desplazamiento positivo, se considera hacia la derecha. De lo contrario hacia la izquierda.
+createRule(SHIF, Numero, Registro)
+//Consume un ciclo del CPU sin hacer nada
+createRule(NOPP)
+//Apila los primeros bytes, indicado por el número, del registro hacia el stack. Modifica el valor del registro de stack de forma acorde.
+createRule(PUSH, Numero, Registro)
+//Desapila los primeros bytes, indicado por el número, del stack hacia el registro. Modifica el valor del registro de stack de forma acorde.
+createRule(TAKE, Numero, Registro)
+
+//Finaliza la ejecución.
+createRule(XXXX)
+
+//Reserva una cantidad de memoria especificada por el registro A. La direccion de esta se almacena en el registro A. Crea en la UMSP un nuevo segmento del tamaño especificado asociado al programa en ejecución.
+createRule(MALC)
+//Libera la memoria apuntada por el registro A. Solo se podra liberar memoria alocada por la instrucción de MALC. Destruye en la UMSP el segmento indicado en el registro A.
+createRule(FREE)
+//Pide por consola del programa que se ingrese un número, con signo entre –2,147,483,648 y 2,147,483,647. El mismo será almacenado en el registro A. Invoca al servicio correspondiente en el proceso Kernel.
+createRule(INNN)
+//Pide por consola del programa que se ingrese una cadena no más larga de lo indicado por el registro B. La misma será almacenada en la posicion de memoria apuntada por el registro A. Invoca al servicio correspondiente en el proceso Kernel.
+createRule(INNC)
+//Imprime por consola del programa el número, con signo almacenado en el registro A. Invoca al servicio correspondiente en el proceso Kernel.
+createRule(OUTN)
+//Imprime por consola del programa una cadena de tamaño indicado por el registro B que se encuentra en la direccion apuntada por el registro A. Invoca al servicio correspondiente en el proceso Kernel.
+createRule(OUTC)
+//Crea un hilo, hijo del TCB que ejecutó la llamada al sistema correspondiente. El nuevo hilo tendrá su Program Counter apuntado al número almacenado en el registro B. El identificador del nuevo hilo se almacena en el registro A.
+createRule(CREA)
+//Bloquea el programa que ejecutó la llamada al sistema hasta que el hilo con el identificador almacenado en el registro A haya finalizado. Invoca al servicio correspondiente en el proceso Kernel.
+createRule(JOIN)
+//Bloquea el programa que ejecutó la llamada al sistema hasta que el recurso apuntado por B se libere.
+createRule(BLOK)
+//Desbloquea a el primer programa bloqueado por el recurso apuntado por B.
+createRule(WAKE)

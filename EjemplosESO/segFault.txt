@@ -1,0 +1,4 @@
+LOAD A,2
+GETM A,A^ Levanta el 2 en memoria
+^Solo el Kernel puede hacer esto
+XXXX

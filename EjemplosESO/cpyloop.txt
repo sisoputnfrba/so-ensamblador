@@ -1,0 +1,16 @@
+LOAD B,#Hola
+ADDR B,M^ Donde esta el texto
+MOVR B,A
+LOAD A,12^ loop counter
+:Loop
+GETM C,B^ levantalo
+SETM 1,S,C^ ponelo en el stack (sin pop)
+INCR S
+INCR B
+DECR A
+JPNZ #Loop^Loop count
+XXXX
+DATA
+:Hola
+"Hola mundo!
+0

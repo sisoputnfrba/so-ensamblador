@@ -1,0 +1,3 @@
+^Ez
+LOAD A,5
+XXXX

@@ -1,11 +1,11 @@
 LOAD A,0
 LOAD B,130
 ADDR A,B
-SHIF 1,A^ <<
+SHIF 1,A^ >>
 LOAD B,27
 ADDR A,B
 SHIF 2,A
 LOAD B,-3
 ADDR A,B
-^(((130<<1) +27)<<2) +(-3))
+^(((130>>1) +27)>>2) +(-3))
 XXXX

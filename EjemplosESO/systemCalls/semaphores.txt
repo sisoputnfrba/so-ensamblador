@@ -2,5 +2,6 @@ LOAD B,5^El semaforo 5
 LOAD D,1^Ponerlo en 1
 INTE SETSEM
 INTE WAIT
+LOAD B,5^Regenero el semaforo 5
 INTE SIGNAL
 XXXX

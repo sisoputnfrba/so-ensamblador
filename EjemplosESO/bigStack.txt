@@ -3,7 +3,7 @@ ADDR A,M
 MOVR B,A^Donde esta el texto
 LOAD A,5^Loop counter
 :Loop
-GETM C,B^levanta 1 bit
+GETM C,B^levanta 1 byte
 PUSH 1,C^y pushealo
 INCR B
 DECR A

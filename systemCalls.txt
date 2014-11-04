@@ -75,8 +75,8 @@ XXXX
 ADDR B,S^Obtiene la posicion del semaforo
 MOVR B,A^Guardar la posicion
 GETM D,B^ Levanta el valor del semaforo en D
-LOAD A,0
-CLEQ D,A^ Si el valor es 0 o menor, es porque habia alguno bloqueado
+LOAD A,-1
+CLEQ D,A^ Si el valor es menor a 0, es porque habia alguno bloqueado
 INCR D
 SETM 1,B,D^ Actualiza el valor del semaforo
 JPNZ #Levantar^ Si habia bloqueados
